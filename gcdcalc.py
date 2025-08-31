@@ -11,37 +11,40 @@ st.markdown("""
     
     * {
         font-family: 'Vazir', 'Tanha', 'Segoe UI', Tahoma, sans-serif !important;
-        text-align: right !important;
     }
     
-    .stTextInput, .stNumberInput, .stSelectbox {
+    .main .block-container {
         direction: rtl;
         text-align: right;
     }
     
-    .success, .error, .info {
+    .stTextInput > div > div > input {
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .stAlert {
         direction: rtl;
         text-align: right;
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("پیدا کردن ب.م.م")
-st.write("این برنامه بزرگترین مقسوم‌علیه مشترک چند عدد را محاسبه می‌کند.")
+# استفاده از markdown برای تمام متون فارسی
+st.markdown("<h1 style='text-align: right; direction: rtl;'>پیدا کردن ب.م.م</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: right; direction: rtl;'>این برنامه بزرگترین مقسوم‌علیه مشترک چند عدد را محاسبه می‌کند.</p>", unsafe_allow_html=True)
 
-numbers_input = st.text_input("اعداد مورد نظر خود را وارد کرده و با کاما جدا کنید:")
+numbers_input = st.text_input(":اعداد مورد نظر خود را وارد کرده و با کاما جدا کنید")
 
 if numbers_input:
     try:
         numbers = [int(n.strip()) for n in numbers_input.split(",")]
-
+        
         gcd_v = numbers[0]
         for num in numbers[1:]:
-            gcd_v = math.gcd(gcd_v,num)
-
+            gcd_v = math.gcd(gcd_v, num)
+            
         st.success(f"بزرگ‌ترین مقسوم‌علیه مشترک اعداد {numbers} برابر {gcd_v} است.")
-        
-
+    
     except ValueError:
-
-            st.error("لطفا فقط عدد صحیح وارد کنید و اعداد را با کاما جدا کنید.")
+        st.error("لطفا فقط عدد صحیح وارد کنید و اعداد را با کاما جدا کنید.")
