@@ -47,7 +47,7 @@ st.markdown("<p style='text-align: right; direction: rtl; margin-bottom: 20px;'>
 
 # فیلد ورودی با استایل بهبود یافته
 numbers_input = st.text_input(
-    "اعداد مورد نظر خود را وارد کرده و با کاما جدا کنید:"
+   ":اعداد مورد نظر خود را وارد کرده و با کاما جدا کنید"
 )
 
 if numbers_input:
@@ -62,5 +62,6 @@ if numbers_input:
     
     except ValueError:
         st.error("لطفا فقط عدد صحیح وارد کنید و اعداد را با کاما جدا کنید.")
+
 
 
