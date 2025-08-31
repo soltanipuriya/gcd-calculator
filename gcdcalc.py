@@ -1,6 +1,31 @@
 import streamlit as st
 import math
 
+# تنظیمات کلی صفحه برای پشتیبانی از فارسی
+st.markdown("""
+<style>
+    @font-face {
+        font-family: 'Vazir';
+        src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2') format('woff2');
+    }
+    
+    * {
+        font-family: 'Vazir', 'Tanha', 'Segoe UI', Tahoma, sans-serif !important;
+        text-align: right !important;
+    }
+    
+    .stTextInput, .stNumberInput, .stSelectbox {
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .success, .error, .info {
+        direction: rtl;
+        text-align: right;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("پیدا کردن ب.م.م")
 st.write("این برنامه بزرگترین مقسوم‌علیه مشترک چند عدد را محاسبه می‌کند.")
 
@@ -18,4 +43,5 @@ if numbers_input:
         
 
     except ValueError:
+
             st.error("لطفا فقط عدد صحیح وارد کنید و اعداد را با کاما جدا کنید.")
