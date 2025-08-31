@@ -18,26 +18,21 @@ st.markdown("""
         text-align: right;
     }
     
-    /* استایل مخصوص فیلدهای ورودی */
-    div[data-testid="stTextInput"] > div > div > input {
-        direction: rtl;
-        text-align: right;
-        padding: 8px 12px;
-    }
-    
-    /* استایل مخصوص لیبل فیلدهای ورودی */
-    div[data-testid="stTextInput"] > label {
-        direction: rtl;
-        text-align: right;
-        display: block;
-        margin-bottom: 5px !important; /* کاهش فاصله */
-        font-weight: bold;
-    }
-    
-    /* کاهش فاصله کلی بین المان‌ها */
-    .stTextInput {
-        margin-bottom: 10px !important;
-    }
+    /* حذف کامل فاصله‌های اضافی */
+div[data-testid="stTextInput"] {
+    margin-bottom: 5px !important;
+    padding: 0 !important;
+}
+
+div[data-testid="stTextInput"] > div {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+div[data-testid="stTextInput"] > label {
+    margin-bottom: 2px !important;
+    padding: 0 !important;
+}
     
     .stAlert {
         direction: rtl;
@@ -68,3 +63,4 @@ if numbers_input:
     
     except ValueError:
         st.error("لطفا فقط عدد صحیح وارد کنید و اعداد را با کاما جدا کنید.")
+
